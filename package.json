@@ -1,0 +1,42 @@
+{
+  "name": "lofi-girl-api-wrapper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Greensky <david.hesliere@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "tslib": "^2.6.2"
+  },
+  "types": "index.d.ts",
+  "repository": "https://github.com/Greensky-gs/lofi-girl-api-wrapper",
+  "bugs": {
+    "url": "https://github.com/Greensky-gs/lofi-girl-api-wrapper/issues"
+  },
+  "files": [
+    "./dist",
+    "index.d.ts"
+  ],
+  "directories": {
+    "lib": "src"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./src/*": "./dist/*",
+    "./dist/*": "./dist/*"
+  },
+  "scripts": {
+    "build": "yarn tsc -b"
+  }
+}
