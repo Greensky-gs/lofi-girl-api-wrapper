@@ -42,7 +42,7 @@ export type connection = {
     port: string;
     id: string;
 }
-export type change<T extends changeType> = T extends 'stationAdd' ? stationAdd : T extends 'stationRemove' ? stationRemove : T extends 'commentUpdate' ? commentUpdate : T extends 'commentDelete' ? commentDelete : T extends 'stationRename' ? stationRename : never
+export type change<T extends changeType> = T extends 'stationAdd' ? stationAdd : T extends 'stationRemove' ? stationRemove : T extends 'commentUpdate' ? commentUpdate : T extends 'commentDelete' ? commentDelete : T extends 'stationRename' ? stationRename : T extends 'recommendation' ? recommendation : never
 
 export type receiveCallback = <T extends changeType>(type: T, change: change<T>) => void | unknown;
 
