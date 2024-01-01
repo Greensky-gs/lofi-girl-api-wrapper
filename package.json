@@ -1,6 +1,6 @@
 {
   "name": "lofi-girl-api-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "author": "Greensky <david.hesliere@gmail.com>",
   "license": "MIT",
