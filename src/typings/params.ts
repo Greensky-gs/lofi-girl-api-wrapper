@@ -27,9 +27,12 @@ export type stationRename = {
     name: string;
     emoji: string;
 } & emitter;
+export type recommendation = {
+    url: string;
+} & emitter;
 
-export type changeType = 'stationAdd' | 'stationRemove' | 'commentUpdate' | 'commentDelete' | 'stationRename';
-export type anyChange = stationAdd | stationRemove | commentUpdate | commentDelete | stationRename;
+export type changeType = 'stationAdd' | 'stationRemove' | 'commentUpdate' | 'commentDelete' | 'stationRename' | 'recommendation';
+export type anyChange = stationAdd | stationRemove | commentUpdate | commentDelete | stationRename | recommendation;
 
 export type register = {
     port: string | number;
@@ -39,4 +42,4 @@ export type connection = {
     port: string;
     id: string;
 }
-export type change<T extends changeType> = T extends 'stationAdd' ? stationAdd : T extends 'stationRemove' ? stationRemove : T extends 'commentUpdate' ? commentUpdate : T extends 'commentDelete' ? commentDelete : T extends 'stationRename' ? stationRename : never
+export type change<T extends changeType> = T extends 'stationAdd' ? stationAdd : T extends 'stationRemove' ? stationRemove : T extends 'commentUpdate' ? commentUpdate : T extends 'commentDelete' ? commentDelete : T extends 'stationRename' ? stationRename : T extends 'recommendation' ? recommendation : never
